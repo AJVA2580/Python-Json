@@ -1,0 +1,16 @@
+import json
+
+
+with open('2019-02-08.json') as matrix:
+    data = json.load(matrix)
+    #print(data)
+    with open('2019-02-15.json') as matrix_one:
+        data_one = json.load(matrix_one)
+        #print(data_one)
+        with open('2019-02-21.json') as matrix_two:
+            data_two = json.load(matrix_two)
+            #print(data_two)
+
+with open('new_matrix.json', 'w') as new_file:
+    all_data = [data, data_one, data_two]
+    json.dump(all_data, new_file, indent=4)
